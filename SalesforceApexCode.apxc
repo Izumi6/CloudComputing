@@ -1,0 +1,25 @@
+// ============================================================
+//  SALESFORCE MINI PROJECT: Simple Calculator
+//  Practical: Design and develop custom Application
+//             using Salesforce Cloud (Apex)
+// ============================================================
+//  Go to: Setup → Apex Classes → New → Paste this → Save
+// ============================================================
+
+public class SimpleCalculator {
+
+    public static void run() {
+        Decimal a = 10;
+        Decimal b = 5;
+        System.debug('Addition:       ' + a + ' + ' + b + ' = ' + (a + b));
+        System.debug('Subtraction:    ' + a + ' - ' + b + ' = ' + (a - b));
+        System.debug('Multiplication: ' + a + ' * ' + b + ' = ' + (a * b));
+        System.debug('Division:       ' + a + ' / ' + b + ' = ' + (a / b));
+    }
+}
+
+// ============================================================
+//  HOW TO RUN (Developer Console → Execute Anonymous Window):
+// ============================================================
+//  SimpleCalculator.run();
+// ============================================================

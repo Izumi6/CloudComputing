@@ -1,0 +1,106 @@
+================================================================
+  SALESFORCE MINI PROJECT: STEP-BY-STEP GUIDE
+  Student Record Management System
+================================================================
+
+PART A: LOGIN
+----------------------------------------------------------------
+1. Open https://login.salesforce.com
+2. Username: testuseradmin1302.16c71c97d024@agentforce.com
+3. Password: Test@123
+4. Click "Log In"
+
+PART B: CREATE CUSTOM OBJECT (Student__c)
+----------------------------------------------------------------
+1. Gear icon → Setup → Object Manager → Create → Custom Object
+2. Label: Student, Plural: Students, Record Name: Student Name
+3. Check: Allow Reports, Allow Activities
+4. Save
+
+5. Add Fields (Object Manager → Student → Fields → New):
+   - Roll_Number (Number, Length 5)
+   - Email (Email)
+   - Department (Picklist: CS, IT, ENTC, Mech)
+   - CGPA (Number, Length 4, Decimal 2)
+   - Phone (Phone)
+   - Year (Picklist: FE, SE, TE, BE)
+
+PART C: CREATE TAB
+----------------------------------------------------------------
+1. Setup → Tabs → Custom Object Tabs → New
+2. Object: Student, choose icon, Save
+
+PART D: CREATE LIGHTNING APP
+----------------------------------------------------------------
+1. Setup → App Manager → New Lightning App
+2. Name: Student Management System
+3. Navigation: Add Students, Home tabs
+4. Profile: System Administrator → Save
+
+PART E: CREATE APEX CLASS
+----------------------------------------------------------------
+1. Setup → Apex Classes → New
+2. Paste StudentManager class from SalesforceApexCode.apxc
+3. Save
+
+PART F: CREATE TRIGGER
+----------------------------------------------------------------
+1. Object Manager → Student → Triggers → New
+2. Paste StudentTrigger from SalesforceApexCode.apxc
+3. Save
+
+PART G: CREATE TEST CLASS
+----------------------------------------------------------------
+1. Setup → Apex Classes → New
+2. Paste StudentManagerTest from SalesforceApexCode.apxc
+3. Save
+
+PART H: EXECUTE AND TEST
+----------------------------------------------------------------
+1. Gear icon → Developer Console
+2. Debug → Open Execute Anonymous Window
+3. Paste and Execute:
+
+StudentManager.addStudent('Suyash Makad', 101, 'suyash@test.com', 'CS', 8.5, '9876543210', 'TE');
+StudentManager.addStudent('Asmita Ipper', 102, 'asmita@test.com', 'CS', 9.2, '9876543211', 'TE');
+StudentManager.addStudent('Rahul Sharma', 103, 'rahul@test.com', 'IT', 7.8, '9876543212', 'SE');
+
+4. Check logs for DEBUG output
+5. Open App Launcher → Student Management System → Students tab
+
+PART I: TEST CRUD
+----------------------------------------------------------------
+StudentManager.getAllStudents();
+StudentManager.getStudentByRoll(101);
+StudentManager.updateCGPA(101, 9.0);
+StudentManager.getToppers(8.5);
+StudentManager.getByDepartment('CS');
+StudentManager.getAverageCGPA();
+StudentManager.deleteStudent(103);
+
+PART J: RUN TEST CLASS
+----------------------------------------------------------------
+1. Developer Console → Test → New Run
+2. Select StudentManagerTest → Run
+3. All tests should pass
+
+PART K: VIVA QUESTIONS
+----------------------------------------------------------------
+Q: What is Salesforce?
+A: Cloud-based CRM platform with PaaS for custom app development.
+
+Q: What is Apex?
+A: Object-oriented language by Salesforce, similar to Java.
+
+Q: What is SOQL?
+A: Salesforce Object Query Language, like SQL for Salesforce data.
+
+Q: What is a Custom Object?
+A: User-created database table with __c suffix (e.g. Student__c).
+
+Q: What is a Trigger?
+A: Code that runs before/after DML events on records.
+
+Q: What are Governor Limits?
+A: Runtime limits (100 SOQL queries, 150 DML per transaction).
+================================================================
