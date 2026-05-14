@@ -1,5 +1,5 @@
 # ================================================================
-#  Google App Engine - Simple Addition Program
+#  Google App Engine - Simple Calculator (calculator.py)
 #  Practical: Install and Configure Google App Engine
 # ================================================================
 
@@ -30,9 +30,6 @@ print(f"Division:       {num1} / {num2} = {divide(num1, num2)}")
 # ================================================================
 #  Terminal Commands
 # ================================================================
-# pip install google-cloud-sdk
-# gcloud init
-# gcloud auth login
-# python GoogleAppEngine_app.py
-# gcloud app deploy
-# gcloud app browse
+# git clone https://github.com/Izumi6/Cloudcomputing.git
+# cd Cloudcomputing
+# python3 calculator.py
