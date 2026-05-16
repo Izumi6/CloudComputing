@@ -1,0 +1,36 @@
+// ============================================================
+//  Stock Market Analysis System
+//  Go to: Setup → Apex Classes → New → Paste this → Save
+// ============================================================
+
+public class StockMarketSystem {
+
+    public static void analyzeStock(String company, Integer price, String news) {
+
+        System.debug('--- Stock Market Analysis ---');
+        System.debug('Company Name: ' + company);
+        System.debug('Stock Price: ' + price);
+        System.debug('Market News: ' + news);
+
+        if(price > 500 && news == 'positive') {
+            System.debug('Decision: BUY');
+            System.debug('Reason: High stock price growth with positive news.');
+        }
+
+        else if(price < 200 && news == 'negative') {
+            System.debug('Decision: SELL');
+            System.debug('Reason: Falling stock price with negative market news.');
+        }
+
+        else {
+            System.debug('Decision: HOLD');
+            System.debug('Reason: Market condition is stable.');
+        }
+    }
+}
+
+// ============================================================
+//  Execute in Developer Console → Execute Anonymous Window:
+// ============================================================
+//  StockMarketSystem.analyzeStock('TCS', 650, 'positive');
+// ============================================================

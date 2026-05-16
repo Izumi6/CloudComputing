@@ -1,0 +1,34 @@
+// ============================================================
+//  Information Management System
+//  Go to: Setup → Apex Classes → New → Paste this → Save
+// ============================================================
+
+public class InformationManagement {
+
+    public static void displayStudentInfo() {
+
+        String name = 'Rahul';
+        Integer age = 20;
+        String department = 'Computer Engineering';
+        Double percentage = 85.5;
+
+        System.debug('--- Student Information ---');
+        System.debug('Student Name: ' + name);
+        System.debug('Age: ' + age);
+        System.debug('Department: ' + department);
+        System.debug('Percentage: ' + percentage);
+
+        if(percentage >= 75) {
+            System.debug('Result: Distinction');
+        }
+        else {
+            System.debug('Result: Pass');
+        }
+    }
+}
+
+// ============================================================
+//  Execute in Developer Console → Execute Anonymous Window:
+// ============================================================
+//  InformationManagement.displayStudentInfo();
+// ============================================================
